@@ -181,7 +181,7 @@ with zipfile.ZipFile(xlsx) as archive:
         file_name = f"sheet-{index:02d}.html"
         sheet_links.append(f'<a href="mssk/{file_name}">{esc(name)}</a>')
         sheet_cards.append(
-            f'<a class="sheet-card" href="mssk/{file_name}"><b>{esc(name)}</b><span>{len(rows_out)} строк, {max_col} колонок</span></a>'
+            f'<a class="sheet-card" href="mssk/{file_name}"><b>{esc(name)}</b></a>'
         )
 
         table = ['<div class="table-wrap"><table class="mssk-table">']
@@ -194,6 +194,7 @@ with zipfile.ZipFile(xlsx) as archive:
         sheet_body = f"""<header class="hero">
   <span class="kicker">МССК вер. 5.0</span>
   <h1>{esc(name)}</h1>
+  <div class="meta"><a href="../index.html#mssk">Назад к списку</a></div>
 </header>
 <section>
   <div class="search"><label for="searchInput">Поиск по листу</label><input id="searchInput" type="search" placeholder="Введите код, параметр или название"><small id="resultCount">Поиск по текущей странице</small></div>
