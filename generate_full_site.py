@@ -231,7 +231,6 @@ main_body = f"""<header class="hero">
     <div class="nav-group"><a class="nav-main" href="#overview">Сводка</a></div>
     <div class="nav-group"><a class="nav-main" href="#docx">Требования DOCX</a><div class="nav-sub">{''.join(doc_nav_html)}</div></div>
     <div class="nav-group"><a class="nav-main" href="#mssk">МССК 5.0</a><div class="nav-sub">{''.join(sheet_links)}</div></div>
-    <div class="nav-group"><a class="nav-main" href="#finish">Как пользоваться</a></div>
   </nav>
   <main class="content">
     <section id="overview">
@@ -241,10 +240,9 @@ main_body = f"""<header class="hero">
     </section>
     <section id="docx"><div class="section-head"><div><span class="tag all">DOCX</span><h2>Требования к материалам в формате IFC</h2></div></div>{''.join(doc_parts)}</section>
     <section id="mssk"><div class="section-head"><div><span class="tag data">XLSX</span><h2>Московская строительная система классификаторов, версия 5.0</h2></div></div><p class="doc-p">Все листы Excel вынесены в отдельные HTML-страницы, чтобы основной регламент открывался быстро. На каждой странице есть собственный поиск по строкам.</p><div class="sheet-grid">{''.join(sheet_cards)}</div></section>
-    <section id="finish"><div class="section-head"><div><span class="tag all">Рабочий порядок</span><h2>Как пользоваться полной версией</h2></div></div><div class="flow"><article><h3>Ищите по DOCX на главной</h3><p>Поиск сверху фильтрует полный текст требований и таблицы Word.</p></article><article><h3>Открывайте листы МССК отдельно</h3><p>Каждый лист Excel доступен целиком в подпапке mssk и имеет свой поиск.</p></article><article><h3>Сверяйте с исходниками при споре</h3><p>HTML создан из файлов в W:\\Test_AI_addon\\Сайт, но юридический приоритет остается за исходным утвержденным документом.</p></article></div></section>
   </main>
 </div>
-<footer>Источник: {esc(str(docx))} и {esc(str(xlsx))}. Сгенерировано локально для быстрого просмотра и поиска.</footer>"""
+"""
 
 (OUT / "index.html").write_text(page("Полный регламент BIM: ЦИМ АГР IFC + МССК", main_body), encoding="utf-8")
 
